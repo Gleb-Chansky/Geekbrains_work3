@@ -1,32 +1,58 @@
+'use strict';
+
 class ProductList {
     constructor(container = '.products') {
         this.container = document.querySelector(container);
-        this._goods = [];
-        this._productsObjects = [];
+        this.goods = [];
+        this.productsObjects = [];
 
-        this._fetchGoods();
-        this._render();
+        this.fetchGoods();
+        this.render();
+        this.calculateSum();
     }
 
-    _fetchGoods() {
-        this._goods = [
-            {id: 1, title: 'Notebook', price: 20000},
-            {id: 2, title: 'Mouse', price: 1500},
-            {id: 3, title: 'Keyboard', price: 5000},
-            {id: 4, title: 'Gamepad', price: 4500},
+    fetchGoods() {
+        this.goods = [{
+                id: 1,
+                title: 'Notebook',
+                price: 20000
+            },
+            {
+                id: 2,
+                title: 'Mouse',
+                price: 1500
+            },
+            {
+                id: 3,
+                title: 'Keyboard',
+                price: 5000
+            },
+            {
+                id: 4,
+                title: 'Gamepad',
+                price: 4500
+            },
         ];
     }
 
-    _render() {
-        for (const product of this._goods) {
+    render() {
+        for (const product of this.goods) {
             const productObject = new ProductItem(product);
             console.log(productObject);
 
-            this._productsObjects.push(productObject);
+            this.productsObjects.push(productObject);
             this.container.insertAdjacentHTML('beforeend', productObject.getHTMLString());
         }
     }
+
+    calculateSum() {
+        const sum = this.goods.reduce(function (sum, current) {
+            return sum + current.price;
+        }, 0);
+        console.log(sum);
+    }
 }
+
 
 class ProductItem {
     constructor(product, img = 'https://via.placeholder.com/200x150') {
@@ -48,27 +74,26 @@ class ProductItem {
     }
 }
 
+class Basket {
+    constructor(container = '.products') {
+        this.addGoods = [];
+        this.deleteGoods = [];
+    }
+    addToBasket() {}
+    deleteFromBasket() {}
+    calculateSum() {}
+    isEmptyBasket() {}
+    openBasket() {}
+}
+
+class BasketItem {
+    constructor(product, img = 'https://via.placeholder.com/200x150') {
+        this.id = product.id;
+        this.title = product.title;
+        this.price = product.price;
+        this.img = img;
+    }
+    render() {}
+}
+
 const list = new ProductList();
-
-// const products = [
-//   {id: 1, title: 'Notebook', price: 20000},
-//   {id: 2, title: 'Mouse', price: 1500},
-//   {id: 3, title: 'Keyboard', price: 5000},
-//   {id: 4, title: 'Gamepad', price: 4500},
-// ];
-//
-// const renderProduct = (item, img='https://via.placeholder.com/200x150') => `<div class="product-item" data-id="${this.id}">
-//               <img src="${img}" alt="Some img">
-//               <div class="desc">
-//                   <h3>${item.title}</h3>
-//                   <p>${item.price} \u20bd</p>
-//                   <button class="buy-btn">Купить</button>
-//               </div>
-//           </div>`;
-//
-// const renderProducts = list => {
-// document.querySelector('.products').insertAdjacentHTML('beforeend', list.map(item => renderProduct(item)).join(''));
-// };
-//
-// renderProducts(products);
-
