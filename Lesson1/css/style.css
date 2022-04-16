@@ -1,0 +1,18 @@
+.title {
+    text-transform: uppercase;
+    color: #dbbdbd;
+}
+
+.header {
+    min-height: 100px;
+    background-color: #3d2f2f;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.products {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
