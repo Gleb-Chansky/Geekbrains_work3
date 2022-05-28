@@ -1,0 +1,120 @@
+$mark_color: #f16d7f;
+
+.marker {
+  text-transform: uppercase;
+  color: $mark_color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background: #222222;
+}
+
+.nav_menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_menu_left {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav_menu_element {
+  padding: 10px;
+  width: 45px;
+  height: 45px;
+}
+
+.logo {
+  background: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.search {
+  background: url("../img/logo_search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav_menu_right {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.header_menu {
+  background: url("../img/header_menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (min-width: 530px) {
+    position: relative;  
+  }
+}
+.header_menu:hover .header_menu_hover {
+  display: flex;
+  z-index: 1;
+}
+.header_face {
+  background: url("../img/header_face.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header_basket {
+  background: url("../img/header_basket.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header_menu_hover {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  height: 800px;
+  top: 65px;
+  background: #ffffff;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  .marker {
+    padding: 10px 33px;
+  }
+  @media (max-width: 530px) {
+    right: 0;
+  }
+}
+.header_menu_hover_element {
+  display: block;
+  font-weight: 300;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 17px;
+  min-width: 232px;
+  padding: 10px 54px;
+}
+.close_button {
+  display: block;
+  text-align: right;
+  padding: 15px;
+}

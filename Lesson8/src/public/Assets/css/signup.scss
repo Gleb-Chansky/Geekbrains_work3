@@ -1,0 +1,135 @@
+@import "_header.scss";
+@import "_main.scss";
+@import "_footer.scss";
+@import "_main_top.scss";
+@import "_adaptive.scss";
+
+.main_top {
+  justify-content: center;
+  box-sizing: border-box;
+  .main_top_left {
+    margin: 0;
+    @media (min-width: 768px) {
+      align-items: start;
+      padding: 16px;
+    }
+  }
+}
+
+.main_wrap {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 40px 8px 95px;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+  }
+  @media (min-width: 1140px) {
+    display: flex;
+    margin: 0 230px;
+  }
+}
+
+.b-SignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #222222;
+  position: relative;
+  @media (min-width: 370px) {
+    width: 360px;
+  }
+  .b-SignUp__inputs_input {
+    display: block;
+    box-sizing: border-box;
+    padding-left: 17px;
+    width: 100%;
+    height: 45px;
+    margin: 20px 0;
+
+    &:last-child {
+      margin-bottom: 31px;
+    }
+    &::placeholder {
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 16px;
+      color: #b1b1b1;
+    }
+  }
+  .b-SignUp__checkBoxes {
+    display: flex;
+
+    .b-SignUp__checkBoxes_radio {
+      margin-right: 20px;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 13px;
+      color: #000000;
+      input {
+        margin-right: 10px;
+      }
+    }
+  }
+  .b-SignUp__title_mgt33 {
+    margin-top: 33px;
+  }
+  .b-SignUp__descr {
+    margin-top: -15.5px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: #b1b1b1;
+    margin-bottom: 39px;
+  }
+  .b-SignUp__button {
+    background: #f16d7f;
+    height: 50px;
+    width: 167px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    border: none;
+  }
+}
+
+.b-Advert {
+  &_margintop {
+    @media (max-width: 767px) {
+      margin-top: 40px;
+    }
+    @media (min-width: 768px) {
+      width: 354px;
+    }
+    @media (min-width: 1140px) {
+      width: 652px;
+    }
+  }
+  .b-Advert__Title {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 32px;
+  }
+  .b-Advert__Descr {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 22px;
+  }
+  .b-Advert__Element {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+}
