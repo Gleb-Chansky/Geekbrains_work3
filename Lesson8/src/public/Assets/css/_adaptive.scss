@@ -1,0 +1,36 @@
+@media (max-width: 1200px) {
+    .main_prod {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 820px) {
+
+    .wrap {
+        flex-direction: column;
+        max-width: 360px;
+    }
+
+
+    .main_sales {
+        display: flex;
+        flex-direction: column;
+
+        .main_sales_element {
+            height: 280px;
+        }
+    }
+
+    .main_prod {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer_subscribe_right {
+        margin-bottom: 100px;
+    }
+    .footer {
+        flex-direction: column-reverse;
+    }
+    .main_prod_element {
+        text-align: center;
+    }
+}
